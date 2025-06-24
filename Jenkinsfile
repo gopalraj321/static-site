@@ -23,7 +23,7 @@ pipeline {
                 ansiblePlaybook(
                     playbook: 'ansible/deploy.yml',
                     inventory: 'ansible/inventory.ini',
-                    credentialsId: 'my-ssh-key-id'
+                    credentialsId: 'ssh-key'
                 )
             }
         }
