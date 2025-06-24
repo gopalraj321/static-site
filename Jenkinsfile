@@ -2,16 +2,10 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "myapp:v1"
+        IMAGE_NAME = "static-site:v1"
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-               git 'https://github.com/gopalraj321/static-site.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $IMAGE_NAME .'
@@ -20,8 +14,7 @@ pipeline {
 
         stage('Push Docker Image (Optional)') {
             steps {
-                echo 'You can push to Docker Hub or ECR here'
-                // sh 'docker push yourrepo/$IMAGE_NAME'
+                echo 'Skip or add docker push logic here'
             }
         }
 
