@@ -1,5 +1,5 @@
 - name: Deploy Dockerized App
-  hosts: dockerhosts
+  hosts: webservers
   become: true
   tasks:
     - name: Pull Docker image (from Jenkins build)
