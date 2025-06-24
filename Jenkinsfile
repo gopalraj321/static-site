@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/user/docker-ansible-app.git'
+               git 'https://github.com/gopalraj321/static-site.git'
             }
         }
 
