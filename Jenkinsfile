@@ -23,7 +23,7 @@ pipeline {
                 ansiblePlaybook(
                     playbook: 'ansible/deploy.yml',
                     inventory: 'ansible/inventory',
-                    credentialsId: 'ssh-key'
+                    extras: '--private-key /var/lib/jenkins/.ssh/id_ed25519 -u ubuntu'
                 )
             }
         }
