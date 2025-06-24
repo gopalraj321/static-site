@@ -1,0 +1,12 @@
+- name: Deploy Dockerized App
+  hosts: dockerhosts
+  become: true
+  tasks:
+    - name: Pull Docker image (from Jenkins build)
+      shell: docker image load < /tmp/myapp.tar
+
+    - name: Stop old container
+      shell: docker rm -f myapp || true
+
+    - name: Run new container
+      shell: docker run -d --name myapp -p 80:5000 myapp:v1
