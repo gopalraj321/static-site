@@ -2,6 +2,10 @@
   hosts: webservers
   become: yes
   tasks:
+    - name: install  apache2 server
+      apt:
+        name: apache2
+        state: present
     - name: Copy app files
       copy:
         src: sample-app/
